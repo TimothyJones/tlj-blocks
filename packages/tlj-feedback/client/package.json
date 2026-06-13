@@ -1,0 +1,26 @@
+{
+  "name": "tlj-feedback-client",
+  "version": "0.0.0",
+  "description": "Framework-agnostic data connector for submitting feedback to a tlj-feedback endpoint",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist",
+    "pretest": "npm run build",
+    "test": "node --test"
+  },
+  "license": "MIT"
+}

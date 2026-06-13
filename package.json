@@ -5,10 +5,18 @@
   "description": "Building blocks for easy application development",
   "type": "module",
   "workspaces": [
-    "packages/*"
+    "packages/tlj-error-report",
+    "packages/tlj-feedback/client",
+    "packages/tlj-feedback/cdk"
   ],
   "scripts": {
-    "test": "npm run test --workspaces --if-present"
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "clean": "npm run clean --workspaces --if-present"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
   },
   "license": "MIT"
 }

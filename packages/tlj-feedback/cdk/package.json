@@ -1,0 +1,31 @@
+{
+  "name": "tlj-feedback-cdk",
+  "version": "0.0.0",
+  "description": "AWS CDK construct that receives feedback via a Lambda Function URL and emails it through an SNS topic",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:handler": "esbuild src/handler/index.ts --bundle --platform=node --target=node22 --format=cjs --outfile=dist/handler/index.js --external:@aws-sdk/*",
+    "build:construct": "tsc -p tsconfig.build.json",
+    "build": "npm run build:handler && npm run build:construct",
+    "typecheck": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist",
+    "pretest": "npm run build",
+    "test": "node --test"
+  },
+  "peerDependencies": {
+    "aws-cdk-lib": "^2.160.0",
+    "constructs": "^10.0.0"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-sns": "^3.700.0",
+    "@types/aws-lambda": "^8.10.145",
+    "aws-cdk-lib": "^2.160.0",
+    "constructs": "^10.3.0",
+    "esbuild": "^0.28.1"
+  },
+  "license": "MIT"
+}
