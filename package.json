@@ -1,0 +1,14 @@
+{
+  "name": "tlj-blocks",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Building blocks for easy application development",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "npm run test --workspaces --if-present"
+  },
+  "license": "MIT"
+}
