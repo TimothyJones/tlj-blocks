@@ -1,3 +1,19 @@
+/**
+ * Lambda handler for the {@link Feedback} construct's Function URL.
+ *
+ * Bundled into this package's `dist/handler/` at build time (esbuild) and
+ * deployed by the construct — it is not a public entry point of the package.
+ *
+ * HTTP contract (POST, JSON):
+ * - Request body: `{ type: "bug" | "feature", title, description, email? }`
+ * - `200 { success: true }` on success
+ * - `400 { error: "ValidationError", message }` for a missing/invalid body
+ * - `500 { error: "ConfigError" | "InternalError", message }` otherwise
+ *
+ * Environment variables (set by the construct):
+ * - `FEEDBACK_TOPIC_ARN` (required) — SNS topic to publish to
+ * - `FEEDBACK_APP_NAME` (optional, default `"App"`) — email subject prefix
+ */
 import { SNSClient, PublishCommand } from "@aws-sdk/client-sns";
 import type {
   APIGatewayProxyEventV2,
