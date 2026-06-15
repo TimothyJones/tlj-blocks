@@ -1,5 +1,5 @@
 {
-  "name": "tlj-feedback-cdk",
+  "name": "@tlj-blocks/feedback-cdk",
   "version": "0.0.0",
   "description": "AWS CDK construct that receives feedback via a Lambda Function URL and emails it through an SNS topic",
   "main": "dist/index.js",

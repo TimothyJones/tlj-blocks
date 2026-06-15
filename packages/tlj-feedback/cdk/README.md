@@ -1,4 +1,4 @@
-# tlj-feedback-cdk
+# @tlj-blocks/feedback-cdk
 
 An AWS CDK construct that stands up a complete **feedback receiver** you can drop
 into any CDK stack: a Lambda behind a public
@@ -9,7 +9,7 @@ topic, which emails a configured address.
 The Lambda handler is **bundled into this package**, so you don't need esbuild,
 Docker, or any bundling setup in your own app — just instantiate the construct.
 
-Pair it with [`tlj-feedback-client`](../client) on the frontend, or POST to the
+Pair it with [`@tlj-blocks/feedback-client`](../client) on the frontend, or POST to the
 endpoint directly (see [HTTP contract](#http-contract)).
 
 ```
@@ -22,7 +22,7 @@ endpoint directly (see [HTTP contract](#http-contract)).
 ## Install
 
 ```sh
-npm install tlj-feedback-cdk
+npm install @tlj-blocks/feedback-cdk
 ```
 
 `aws-cdk-lib` and `constructs` are **peer dependencies** — your CDK app already
@@ -43,7 +43,7 @@ Add the construct to a stack. The only required prop is `feedbackEmail`.
 // lib/my-stack.ts
 import { Stack, StackProps, CfnOutput } from "aws-cdk-lib";
 import { Construct } from "constructs";
-import { Feedback } from "tlj-feedback-cdk";
+import { Feedback } from "@tlj-blocks/feedback-cdk";
 
 export class MyStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -85,10 +85,10 @@ cdk deploy
 
 ## Wire up the frontend
 
-Give the `FeedbackUrl` to the [`tlj-feedback-client`](../client):
+Give the `FeedbackUrl` to the [`@tlj-blocks/feedback-client`](../client):
 
 ```ts
-import { submitFeedback } from "tlj-feedback-client";
+import { submitFeedback } from "@tlj-blocks/feedback-client";
 
 await submitFeedback({
   endpoint: feedbackUrl, // the CfnOutput value, e.g. via a build-time env var

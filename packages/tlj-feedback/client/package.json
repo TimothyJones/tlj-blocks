@@ -1,5 +1,5 @@
 {
-  "name": "tlj-feedback-client",
+  "name": "@tlj-blocks/feedback-client",
   "version": "0.0.0",
   "description": "Framework-agnostic data connector for submitting feedback to a tlj-feedback endpoint",
   "type": "module",

@@ -1,6 +1,6 @@
 /**
- * tlj-feedback-client — a small, dependency-free connector for submitting
- * user feedback to a tlj-feedback endpoint (see the `tlj-feedback-cdk` package
+ * @tlj-blocks/feedback-client — a small, dependency-free connector for submitting
+ * user feedback to a tlj-feedback endpoint (see the `@tlj-blocks/feedback-cdk` package
  * for the matching backend).
  */
 

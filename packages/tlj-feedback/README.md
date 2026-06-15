@@ -5,19 +5,19 @@ delivering it to your inbox. It comes in two independently-publishable packages:
 
 | Package                           | Runs on   | Responsibility                                                                  |
 | --------------------------------- | --------- | ------------------------------------------------------------------------------- |
-| [`tlj-feedback-client`](./client) | frontend  | Dependency-free connector that POSTs `{ type, title, description }` feedback.   |
-| [`tlj-feedback-cdk`](./cdk)       | AWS (CDK) | Construct: a Lambda Function URL that publishes feedback to an SNS email topic. |
+| [`@tlj-blocks/feedback-client`](./client) | frontend  | Dependency-free connector that POSTs `{ type, title, description }` feedback.   |
+| [`@tlj-blocks/feedback-cdk`](./cdk)       | AWS (CDK) | Construct: a Lambda Function URL that publishes feedback to an SNS email topic. |
 
 ## How they fit together
 
 ```
  frontend ──submitFeedback()──▶ Lambda Function URL ──▶ SNS topic ──▶ email
- (tlj-feedback-client)            (tlj-feedback-cdk)
+ (@tlj-blocks/feedback-client)            (@tlj-blocks/feedback-cdk)
 ```
 
-1. Deploy `tlj-feedback-cdk` in your CDK stack; it outputs a Function URL.
+1. Deploy `@tlj-blocks/feedback-cdk` in your CDK stack; it outputs a Function URL.
 2. Confirm the SNS email subscription (one-time AWS email).
-3. Pass that URL to `tlj-feedback-client` in your frontend.
+3. Pass that URL to `@tlj-blocks/feedback-client` in your frontend.
 
 See each package's README for full usage and API details:
 

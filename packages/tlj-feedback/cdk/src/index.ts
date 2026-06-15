@@ -64,14 +64,14 @@ export interface FeedbackProps {
  *
  * The endpoint accepts a JSON body of `{ type: "bug" | "feature", title,
  * description, email? }` and returns `{ success: true }` on success. Pair it
- * with the `tlj-feedback-client` package on the frontend, or POST to it
+ * with the `@tlj-blocks/feedback-client` package on the frontend, or POST to it
  * directly.
  *
  * @example
  * ```ts
  * import { Stack, StackProps, CfnOutput } from "aws-cdk-lib";
  * import { Construct } from "constructs";
- * import { Feedback } from "tlj-feedback-cdk";
+ * import { Feedback } from "@tlj-blocks/feedback-cdk";
  *
  * export class MyStack extends Stack {
  *   constructor(scope: Construct, id: string, props?: StackProps) {

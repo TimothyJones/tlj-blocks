@@ -1,5 +1,5 @@
 {
-  "name": "tlj-error-report",
+  "name": "@tlj-blocks/error-report",
   "version": "0.0.0",
   "description": "Error reporting building block",
   "type": "module",

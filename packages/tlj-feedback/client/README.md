@@ -1,19 +1,19 @@
-# tlj-feedback-client
+# @tlj-blocks/feedback-client
 
 A tiny, dependency-free connector for submitting user feedback to a
-[`tlj-feedback-cdk`](../cdk) endpoint (a Lambda Function URL that emails feedback
+[`@tlj-blocks/feedback-cdk`](../cdk) endpoint (a Lambda Function URL that emails feedback
 via SNS). Works in any browser or runtime with `fetch`.
 
 ## Install
 
 ```sh
-npm install tlj-feedback-client
+npm install @tlj-blocks/feedback-client
 ```
 
 ## Usage
 
 ```ts
-import { submitFeedback } from "tlj-feedback-client";
+import { submitFeedback } from "@tlj-blocks/feedback-client";
 
 await submitFeedback({
   endpoint: "https://<your-function-url>.lambda-url.us-east-1.on.aws/",

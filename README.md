@@ -20,9 +20,9 @@ package).
 ```
 packages/
 ├── tlj-feedback/
-│   ├── client/   → tlj-feedback-client
-│   └── cdk/      → tlj-feedback-cdk
-└── tlj-error-report/
+│   ├── client/   → @tlj-blocks/feedback-client
+│   └── cdk/      → @tlj-blocks/feedback-cdk
+└── tlj-error-report/   → @tlj-blocks/error-report
 ```
 
 ## Development
